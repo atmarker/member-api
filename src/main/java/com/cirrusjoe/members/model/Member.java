@@ -7,13 +7,13 @@ import java.sql.Timestamp;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
-@Table(name = "members")
-@SequenceGenerator(name="seq", initialValue=161, allocationSize=100)
+@Table(name = "MEMBERS")
+@SequenceGenerator(name="seq", initialValue=4, allocationSize=100)
 public class Member {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
-    private Long memberId;
-    String givenName, sn, email,telephone,address1,address2,city,state,country,postcode;
+    private int id;
+    String givenName, sn, email, telephone, address1, address2, city, state, country, postcode;
     Date birthdate;
     Timestamp created, updated;
 
@@ -21,8 +21,8 @@ public class Member {
     public Member() {
     }
 
-    public Member(Long memberId, String givenName, String sn, String email, String telephone, String address1, String address2, String city, String state, String country, String postcode, Date birthdate, Timestamp created, Timestamp updated) {
-        this.memberId = memberId;
+    public Member(int id, String givenName, String sn, Date birthdate, String email, String telephone, String address1, String address2, String city, String state, String country, String postcode) {
+        this.id = id;
         this.givenName = givenName;
         this.sn = sn;
         this.email = email;
@@ -34,16 +34,53 @@ public class Member {
         this.country = country;
         this.postcode = postcode;
         this.birthdate = birthdate;
-        this.created = created;
-        this.updated = updated;
     }
 
-    public Long getMemberId() {
-        return memberId;
+    public Member(int id, String givenName, String sn, Date birthdate, String email, String telephone, String address1, String city, String state, String country, String postcode) {
+        this.id = id;
+        this.givenName = givenName;
+        this.sn = sn;
+        this.email = email;
+        this.telephone = telephone;
+        this.address1 = address1;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postcode = postcode;
+        this.birthdate = birthdate;
     }
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
+    public Member(String givenName, String sn, Date birthdate, String email, String telephone, String address1, String address2, String city, String state, String country, String postcode) {
+        this.givenName = givenName;
+        this.sn = sn;
+        this.email = email;
+        this.telephone = telephone;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postcode = postcode;
+        this.birthdate = birthdate;
+    }
+    public Member(String givenName, String sn, Date birthdate, String email, String telephone, String address1, String city, String state, String country, String postcode) {
+        this.givenName = givenName;
+        this.sn = sn;
+        this.email = email;
+        this.telephone = telephone;
+        this.address1 = address1;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postcode = postcode;
+        this.birthdate = birthdate;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getGivenName() {
