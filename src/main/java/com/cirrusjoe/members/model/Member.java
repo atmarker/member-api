@@ -12,17 +12,39 @@ import java.sql.Timestamp;
 public class Member {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
-    private int id;
-    String givenName, sn, email, telephone, address1, address2, city, state, country, postcode;
-    Date birthdate;
-    Timestamp created, updated;
+    private long id;
+    String givenName;
+    String sn;
+    String email;
+    private String telephone;
+    private String address1;
+    private String address2;
+    private String city;
+    private String state;
+    private String country;
+    private String postcode;
+    private Date birthdate;
+    private Timestamp created;
+    private Timestamp updated;
 
 
     public Member() {
     }
 
-    public Member(int id, String givenName, String sn, Date birthdate, String email, String telephone, String address1, String address2, String city, String state, String country, String postcode) {
-        this.id = id;
+    public Member(long id, String givenName, String sn, String email, String telephone, String address1, String city, String state, String postcode, Date birthdate) {
+        this.setId(id);
+        this.givenName = givenName;
+        this.sn = sn;
+        this.email = email;
+        this.telephone = telephone;
+        this.address1 = address1;
+        this.city = city;
+        this.state = state;
+        this.postcode = postcode;
+        this.birthdate = birthdate;
+    }
+    public Member(long id, String givenName, String sn, String email, String telephone, String address1, String address2, String city, String state, String postcode, Date birthdate) {
+        this.setId(id);
         this.givenName = givenName;
         this.sn = sn;
         this.email = email;
@@ -31,55 +53,14 @@ public class Member {
         this.address2 = address2;
         this.city = city;
         this.state = state;
-        this.country = country;
         this.postcode = postcode;
         this.birthdate = birthdate;
     }
-
-    public Member(int id, String givenName, String sn, Date birthdate, String email, String telephone, String address1, String city, String state, String country, String postcode) {
-        this.id = id;
-        this.givenName = givenName;
-        this.sn = sn;
-        this.email = email;
-        this.telephone = telephone;
-        this.address1 = address1;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.postcode = postcode;
-        this.birthdate = birthdate;
-    }
-
-    public Member(String givenName, String sn, Date birthdate, String email, String telephone, String address1, String address2, String city, String state, String country, String postcode) {
-        this.givenName = givenName;
-        this.sn = sn;
-        this.email = email;
-        this.telephone = telephone;
-        this.address1 = address1;
-        this.address2 = address2;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.postcode = postcode;
-        this.birthdate = birthdate;
-    }
-    public Member(String givenName, String sn, Date birthdate, String email, String telephone, String address1, String city, String state, String country, String postcode) {
-        this.givenName = givenName;
-        this.sn = sn;
-        this.email = email;
-        this.telephone = telephone;
-        this.address1 = address1;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.postcode = postcode;
-        this.birthdate = birthdate;
-    }
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -186,6 +167,4 @@ public class Member {
     public void setUpdated(Timestamp updated) {
         this.updated = updated;
     }
-
-
 }

@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS MEMBERS;
 
 CREATE TABLE MEMBERS (
-  ID INT AUTO_INCREMENT  PRIMARY KEY,
+  ID LONG AUTO_INCREMENT  PRIMARY KEY,
   GIVENNAME VARCHAR(128) NOT NULL,
   SN VARCHAR(128) DEFAULT NULL,
   BIRTHDATE DATE DEFAULT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE MEMBERS (
   UPDATED TIMESTAMP DEFAULT NULL
 );
  -- https://generatedata.com/generator
-INSERT INTO members (givenName,sn,birthdate,email,telephone,address1,address2,city,state,country,postcode,created) VALUES
-('Britanni','Montoya','1955-07-04','donec.egestas@outlook.net','1-488-807-8824','745-7939 Adipiscing Street','Ap #175-555 Dui Avenue','Narvik','Piemonte','Indonesia','2922','2021-09-25'),
+INSERT INTO members (GIVENNAME,SN,BIRTHDATE,EMAIL,TELEPHONE,ADDRESS1,ADDRESS2,CITY,STATE,COUNTRY,POSTCODE,CREATED) VALUES
+  ('Britanni','Montoya','1955-07-04','donec.egestas@outlook.net','1-488-807-8824','745-7939 Adipiscing Street','Ap #175-555 Dui Avenue','Narvik','Piemonte','Indonesia','2922','2021-09-25'),
   ('Ashely','Harris','1977-09-19','enim@protonmail.couk','1-198-846-2113','530-2724 Lobortis Rd.','Ap #166-1927 Hendrerit. Street','Alajuela','Rio Grande do Sul','Australia','0453','2023-01-01'),
   ('Leila','Pittman','1985-01-31','felis.adipiscing@icloud.org','1-668-810-2875','Ap #667-1756 Quisque Rd.','Ap #363-9168 Donec Rd.','Iloilo City','Guanacaste','China','80144','2022-07-23'),
   ('Montana','Reynolds','1981-04-15','lacus.pede@google.org','1-762-837-1896','2473 Sollicitudin Road','Ap #446-1683 Arcu St.','Gaspé','Kaduna','Brazil','68932-75388','2022-12-21'),
@@ -119,8 +119,7 @@ INSERT INTO members (givenName,sn,birthdate,email,telephone,address1,address2,ci
   ('TaShya','Walker','1994-10-05','cursus.luctus.ipsum@icloud.com','1-271-407-0463','Ap #555-4974 Interdum Road','713-7693 Aliquet. Avenue','Tula','Nordland','Netherlands','71808','2018-12-18'),
   ('Jane','Bruce','1979-06-10','nam@yahoo.couk','1-370-483-0686','P.O. Box 977, 4165 Amet Rd.','792-8290 Amet Street','Saint Petersburg','Bắc Kạn','Philippines','625157','2023-03-30');
 
-INSERT INTO members (givenName,sn,birthdate,email,telephone,address1,city,state,country,postcode,created)
-VALUES
+INSERT INTO members (GIVENNAME,SN,BIRTHDATE,EMAIL,TELEPHONE,ADDRESS1,CITY,STATE,COUNTRY,POSTCODE,CREATED) VALUES
   ('Sharon','Blackburn','1979-04-17','odio.auctor@protonmail.couk','1-103-528-0328','Ap #424-9261 Vulputate, Av.','Shandong','North Island','Nigeria','58082','2022-01-02'),
   ('Zoe','Koch','1962-09-30','vel.sapien@protonmail.org','1-546-327-3237','P.O. Box 421, 287 Molestie Rd.','Lithgow','Flevoland','Peru','599662','2020-10-27'),
   ('Portia','Finch','1964-01-18','a.dui@aol.couk','1-147-212-4470','477-5966 Velit Avenue','Cañas','Loreto','Poland','6213','2021-05-24'),

@@ -4,14 +4,12 @@ import com.cirrusjoe.members.repositories.MembersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("member")
 public class MemberController {
-
     @Autowired
     private MembersRepository repository;
+
     @PostMapping
     public Member addMember(@RequestBody Member member) {
         return repository.save(member);
